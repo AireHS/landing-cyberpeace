@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-import Index from "./pages/Index.tsx";
+import Index from "./pages/Index";
 import SOC360 from "./pages/SOC360";
 import RedTeaming from "./pages/RedTeaming";
 import Contacto from "./pages/Contacto";

@@ -1,40 +1,34 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, ChevronDown, Menu, X, Crosshair, Zap } from 'lucide-react';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all ${scrolled ? 'bg-background/95 backdrop-blur-md shadow-md' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold">CYBERPEACE</Link>
+    <nav className="sticky top-0 z-50 bg-[#050917]/90 backdrop-blur-sm border-b border-slate-800 font-sans">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="text-3xl font-extrabold tracking-tighter text-white">
+          CYBER<span className="text-cyan-400">PEACE</span>
+        </Link>
         
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex gap-6">
-          <Link to="/soc-360" className="text-sm font-medium hover:text-primary transition-colors">SOC360</Link>
-          <Link to="/pricing" className="text-sm font-medium hover:text-primary transition-colors">Pricing</Link>
-        </div>
-
-        {/* Acciones Premium */}
-        <div className="hidden lg:flex items-center gap-4">
-          <Link to="/contacto" className="border px-4 py-2 rounded-lg text-sm font-semibold hover:bg-muted">Contacto</Link>
-          <Link to="/partners#registro" className="bg-primary text-white px-5 py-2 rounded-lg text-sm font-semibold btn-premium-shine">
-            Solicitar Demo
+        {/* Enlaces de Navegación del Diseño Objetivo */}
+        <div className="flex items-center gap-8">
+          {['Servicios', 'Nosotros', 'Casos de Éxito', 'Noticias'].map(link => (
+            <Link 
+              key={link}
+              to="#" // Ajustar rutas según necesidad
+              className="text-lg text-slate-300 hover:text-cyan-400 transition-colors"
+            >
+              {link}
+            </Link>
+          ))}
+          
+          {/* Botón Contáctanos */}
+          <Link 
+            to="/contacto"
+            className="px-6 py-2 border-2 border-cyan-400 text-cyan-400 rounded-full font-semibold hover:bg-cyan-400 hover:text-[#050917] transition-all duration-300"
+          >
+            Contáctanos
           </Link>
         </div>
-
-        {/* Mobile Toggle */}
-        <button className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X /> : <Menu />}
-        </button>
       </div>
     </nav>
   );
