@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Instagram, Linkedin, Send } from "lucide-react";
 
 const Index = () => {
   const initialized = useRef(false);
@@ -102,11 +101,9 @@ const Index = () => {
                         <div className="flex items-center justify-center gap-6">
                             <span className="text-lg text-slate-300">Visítanos en:</span>
                             <div className="flex gap-4">
-                                <a href="#" aria-label="Instagram" className="p-3 bg-slate-900/50 border border-slate-700 rounded-full text-cyan-400 hover:bg-cyan-950 hover:border-cyan-500 transition-all shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-                                    <Instagram size={20} />
-                                </a>
                                 <a href="#" aria-label="LinkedIn" className="p-3 bg-slate-900/50 border border-slate-700 rounded-full text-cyan-400 hover:bg-cyan-950 hover:border-cyan-500 transition-all shadow-[0_0_15px_rgba(6,182,212,0.15)]">
-                                    <Linkedin size={20} />
+                                    {/* SVG Nativo de LinkedIn */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                                 </a>
                             </div>
                         </div>
@@ -137,7 +134,8 @@ const Index = () => {
                                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-cyan-400 to-cyan-600 opacity-70 group-hover:opacity-100 transition-opacity"></div>
                                 <div className="relative flex items-center justify-center gap-2 px-6 py-3 bg-[#050917] rounded-xl text-lg font-bold text-cyan-400 group-hover:bg-transparent group-hover:text-white transition-colors duration-300">
                                     Enviar
-                                    <Send size={20} className="transform group-hover:translate-x-1 transition-transform"/>
+                                    {/* SVG Nativo de Send */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform group-hover:translate-x-1 transition-transform"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
                                 </div>
                             </button>
                         </form>
